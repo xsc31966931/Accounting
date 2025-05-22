@@ -70,3 +70,66 @@ li {
     margin-bottom: 5px;
     border-radius: 3px;
 }
+
+.account-balance {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.positive-balance {
+    color: #28a745;
+}
+
+.negative-balance {
+    color: #dc3545;
+}
+
+.edit-balance {
+    background-color: #ffc107;
+    color: #212529;
+    margin-left: 10px;
+    padding: 2px 5px;
+    font-size: 0.8em;
+}
+
+#chart-container {
+    margin-top: 20px;
+}
+
+.chart-row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.chart-cell {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.chart-cell h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+#analysis-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.analysis-highlight {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.analysis-warning {
+    color: #dc3545;
+}
+
+.analysis-success {
+    color: #28a745;
+}

@@ -62,6 +62,7 @@
         <h2>账户管理</h2>
         <form id="account-form">
             <input type="text" id="account-name" placeholder="账户名称" required>
+            <input type="number" id="account-balance" placeholder="初始余额" step="0.01" value="0">
             <button type="submit">添加账户</button>
         </form>
         <ul id="account-list"></ul>
@@ -84,13 +85,58 @@
         <form id="report-form">
             <input type="date" id="report-start-date">
             <input type="date" id="report-end-date">
-            <select id="report-category"></select>
-            <select id="report-account"></select>
             <button type="submit">生成报表</button>
         </form>
         <div id="chart-container">
-            <canvas id="chart"></canvas>
+            <div class="chart-row">
+                <div class="chart-cell">
+                    <h3>支出分类(柱状图)</h3>
+                    <canvas id="expense-bar-chart"></canvas>
+                </div>
+                <div class="chart-cell">
+                    <h3>支出分类(饼图)</h3>
+                    <canvas id="expense-pie-chart"></canvas>
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart-cell">
+                    <h3>收入分类(柱状图)</h3>
+                    <canvas id="income-bar-chart"></canvas>
+                </div>
+                <div class="chart-cell">
+                    <h3>收入分类(饼图)</h3>
+                    <canvas id="income-pie-chart"></canvas>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- 收支分析 -->
+    <section id="analysis-section">
+        <h2>收支分析</h2>
+        <form id="analysis-form">
+            <select id="analysis-period">
+                <option value="month">按月</option>
+                <option value="year">按年</option>
+            </select>
+            <select id="analysis-year"></select>
+            <select id="analysis-month" style="display:none;">
+                <option value="01">1月</option>
+                <option value="02">2月</option>
+                <option value="03">3月</option>
+                <option value="04">4月</option>
+                <option value="05">5月</option>
+                <option value="06">6月</option>
+                <option value="07">7月</option>
+                <option value="08">8月</option>
+                <option value="09">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+            </select>
+            <button type="submit">生成智能分析报告</button>
+        </form>
+        <div id="analysis-result"></div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
