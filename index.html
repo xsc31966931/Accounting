@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数迹</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <h1>🍃 让记账像呼吸一样自然</h1>
+    </nav>
+
+    <!-- 记录管理 -->
+    <section id="transaction-section">
+        <h2>记录管理</h2>
+        <form id="transaction-form">
+            <input type="date" id="transaction-date" required>
+            <input type="text" id="transaction-description" placeholder="描述" required>
+            <input type="number" id="transaction-amount" placeholder="金额" step="0.01" required>
+            <select id="transaction-type">
+                <option value="income">收入</option>
+                <option value="expense">支出</option>
+            </select>
+            <select id="transaction-category"></select>
+            <select id="transaction-account"></select>
+            <button type="submit">添加记录</button>
+        </form>
+        <table id="transaction-table">
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>描述</th>
+                    <th>金额</th>
+                    <th>类型</th>
+                    <th>分类</th>
+                    <th>账户</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- 分类管理 -->
+    <section id="category-section">
+        <h2>分类管理</h2>
+        <form id="category-form">
+            <input type="text" id="category-name" placeholder="分类名称" required>
+            <select id="category-type">
+                <option value="income">收入</option>
+                <option value="expense">支出</option>
+            </select>
+            <button type="submit">添加分类</button>
+        </form>
+        <ul id="category-list"></ul>
+    </section>
+
+    <!-- 账户管理 -->
+    <section id="account-section">
+        <h2>账户管理</h2>
+        <form id="account-form">
+            <input type="text" id="account-name" placeholder="账户名称" required>
+            <button type="submit">添加账户</button>
+        </form>
+        <ul id="account-list"></ul>
+    </section>
+
+    <!-- 预算功能 -->
+    <section id="budget-section">
+        <h2>预算功能</h2>
+        <form id="budget-form">
+            <input type="month" id="budget-month" required>
+            <input type="number" id="budget-amount" placeholder="预算金额" step="0.01" required>
+            <button type="submit">设置预算</button>
+        </form>
+        <div id="budget-status"></div>
+    </section>
+
+    <!-- 报表生成与数据可视化 -->
+    <section id="report-section">
+        <h2>报表生成与数据可视化</h2>
+        <form id="report-form">
+            <input type="date" id="report-start-date">
+            <input type="date" id="report-end-date">
+            <select id="report-category"></select>
+            <select id="report-account"></select>
+            <button type="submit">生成报表</button>
+        </form>
+        <div id="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
